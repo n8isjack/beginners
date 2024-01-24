@@ -29,32 +29,32 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
+				<strong class="text-xl uppercase"><a href="/">Svelte Class</a></strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
+					href="https://kit.svelte.dev/docs/introduction"
 					target="_blank"
 					rel="noreferrer"
 				>
-					Discord
+					SvelteKit
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
+					href="https://www.skeleton.dev/elements/alerts"
 					target="_blank"
 					rel="noreferrer"
 				>
-					Twitter
+					Skeleton
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
+					href="https://tailwindcss.com/docs/customizing-colors"
 					target="_blank"
 					rel="noreferrer"
 				>
-					GitHub
+					Tailwind CSS
 				</a>
 			</svelte:fragment>
 		</AppBar>
