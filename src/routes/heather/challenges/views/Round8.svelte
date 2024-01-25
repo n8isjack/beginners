@@ -30,5 +30,11 @@
 	</div>
 </header>
 <main>
-	<section>...stuff</section>
+	<section>
+		{#each challenges as { title }}
+			<div>
+				<div>{title}</div>
+			</div>
+		{/each}
+	</section>
 </main>
