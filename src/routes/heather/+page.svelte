@@ -5,6 +5,8 @@
 <main>
 	<h1 class="mb-16">Welcome to {myName}'s page!</h1>
 	<a class="btn variant-filled" href="/heather/challenges">Challenges</a>
+	<br/>
+	<a class="btn variant-filled" href="/heather/capstone">Capstone</a>
 </main>
 
 <style>
