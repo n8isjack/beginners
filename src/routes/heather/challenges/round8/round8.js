@@ -46,10 +46,15 @@ export const challenge4 = (data) => {
 	let count = 0;
 	let sum = 0;
 
-	let negData = (value) => {
+	let isNegative = (value) => {
 		return value < 0;
-		// 	count += 1;
-		// 	sum += value;
 	};
-	return data.filter(negData);
+
+	let negData = data.filter(isNegative);
+
+	for (let i = 0; i < negData.length; i++) {
+		sum += negData[i];
+		count += 1;
+	}
+	return sum / count;
 };
