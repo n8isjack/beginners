@@ -19,7 +19,11 @@
 				</a>
 			{/each}
 		</div>
-		<div class="space-y-2"></div>
+		<div class="space-y-2">
+			<a class="btn variant-filled capitalize" href="/flashCards" rel="noreferrer">
+				Flash Cards App
+			</a>
+		</div>
 	</div>
 </div>
 

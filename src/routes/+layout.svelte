@@ -34,11 +34,27 @@
 			<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface"
+					href="https://svelte.dev/docs/introduction"
+					target="_blank"
+					rel="noreferrer"
+				>
+					Svelte
+				</a>
+				<a
+					class="btn btn-sm variant-ghost-surface"
 					href="https://kit.svelte.dev/docs/introduction"
 					target="_blank"
 					rel="noreferrer"
 				>
 					SvelteKit
+				</a>
+				<a
+					class="btn btn-sm variant-ghost-surface"
+					href="https://learn.svelte.dev/tutorial/welcome-to-svelte"
+					target="_blank"
+					rel="noreferrer"
+				>
+					Svelte Tutorial
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
