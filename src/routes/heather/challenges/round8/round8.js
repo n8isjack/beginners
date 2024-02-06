@@ -47,14 +47,24 @@ export const challenge4 = (data) => {
 	let sum = 0;
 
 	let isNegative = (value) => {
-		return value < 0;
+		return value < 0; // true | false
 	};
-
-	let negData = data.filter(isNegative);
-
+	let negData = data.filter((value) => value < 0);
 	for (let i = 0; i < negData.length; i++) {
 		sum += negData[i];
 		count += 1;
 	}
 	return sum / count;
 };
+
+// export const challenge4 = (data) => {
+// 	let count = 0;
+// 	let sum = 0;
+//
+// 	let negData = data.filter((value) => value < 0);
+// 	for (let i = 0; i < negData.length; i++) {
+// 		sum += negData[i];
+// 		count += 1;
+// 	}
+// 	return sum / count;
+// };
