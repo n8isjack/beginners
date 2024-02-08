@@ -80,5 +80,20 @@ export const angelines = [
 		setup: ['a = 23', 'n = 89', 'k = 22', 'q = 78', ' m = 55', ' b = 43'],
 		test: 'n > m || a > k !== b > q ',
 		answer: false
+	},
+	{
+		setup: ['x = 12 % 2', 'b = 35 % 3'],
+		test: 'x > b',
+		answer: true
+	},
+	{
+		setup: ['t = 26 % 2', ' w = 6 % 3', 'r = 5', 'l = 45', 'd = 82 % 4'],
+		test: 't < w && r > w',
+		answer: true
+	},
+	{
+		setup: ['c = 63 % 3', 'd = 92 % 2', 'l = 55', 'z = 3', 'v = 72 % 2'],
+		test: 'c < d || l < z && d < v',
+		answer: false
 	}
 ];
