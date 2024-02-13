@@ -5,6 +5,9 @@
 	/** @type {import('./$types').PageData} */
 	export let data;
 
+	let currentCard = 0;
+	$: card = data.flash_cards[currentCard];
+
 	if (browser) {
 		console.log('data', data);
 	}
@@ -13,41 +16,37 @@
 </script>
 
 <!-- HTML area -->
-<head>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Lexend:wght@700;800;900&display=swap"
-		rel="stylesheet"
-	/>
-	/>
-</head>
+<head> </head>
 <main>
-	{#each data.flash_cards as card}
-		<div class="flash-card">
-			<div class="setup"></div>
+	<div class="flash-card">
+		<div class="setup">
 			{#each card.setup as value}
 				<div>{value}</div>
 			{/each}
-			<div class="test">
-				{card.test}
-			</div>
-			<div class="answer">
+		</div>
+		<div class="test">
+			{card.test}
+		</div>
+		<div class="answer">
+			{#if card.correct === undefined}
 				<button on:click|stopPropagation={() => (card.correct = card.answer === true)}>True</button>
+
 				<button on:click|stopPropagation={() => (card.correct = card.answer === false)}
 					>False</button
 				>
-				<div>
-					{#if card.correct === true}
-						<div class="bomb">You're the BOMB.com</div>
-					{:else if card.correct === false}
-						<div class="suck">You SUCK!</div>
-					{/if}
-					{card.correct}
-				</div>
+			{/if}
+			<div>
+				{#if card.correct === true}
+					<div class="bomb">You're the BOMB.com</div>
+				{:else if card.correct === false}
+					<div class="suck">You SUCK!</div>
+				{/if}
 			</div>
+			{#if card.correct !== undefined}
+				<button on:click={() => currentCard++}>Next</button>
+			{/if}
 		</div>
-	{/each}
+	</div>
 </main>
 
 <style lang="postcss">
@@ -56,18 +55,18 @@
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: column;
+		justify-content: center;
 		align-items: center;
 		color: #003249;
 		background-color: #003249;
+		height: 100%;
 	}
 
 	.setup {
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
-		width: 400px;
-		justify-content: space-between;
-		align-items: center;
+		justify-content: space-around;
 	}
 
 	.test {
@@ -115,8 +114,8 @@
 		margin: 2em;
 		border: solid 6px #007ea7;
 		background-color: #f3f6f7;
-		height: 300px;
-		width: 450px;
+		min-height: 350px;
+		min-width: 500px;
 		border-radius: 16px;
 		box-shadow: 0px 0px 5px #ffbc42;
 		/*box-shadow: 2px 2px 2px #007ea7;*/
