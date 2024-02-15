@@ -95,5 +95,27 @@ export const angelines = [
 		setup: ['c = 63 % 3', 'd = 92 % 2', 'l = 55', 'z = 3', 'v = 72 % 2'],
 		test: 'c < d || l < z && d < v',
 		answer: false
+	},
+	{
+		setup: ['angeline = 35', 'heather = 38', 'amy = 65', 'vin = 55'],
+		test: 'angeline < heather && heather < amy && amy > vin',
+		answer: true
+	},
+	{
+		setup: ['taylor = 85', 'swift = 30 % 2', 'superbowl = 23', 'usher = 10 % 2'],
+		test: 'taylor > superbowl && taylor > usher',
+		answer: true
+	},
+	{
+		setup: [
+			'mcdonalds = 1',
+			'kneaders = 30',
+			'ihop = 5',
+			'kitchen88 = 98',
+			'subway = 45',
+			'sushi = 85'
+		],
+		test: 'mcdonalds < ihop && kitchen 88 > kneaders || sushi > subway',
+		answer: true
 	}
 ];

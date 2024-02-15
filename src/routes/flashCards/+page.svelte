@@ -27,7 +27,7 @@
 </script>
 
 <main>
-	<div class="flash-card" on:click={() => currentCardIndex++}>
+	<div class="flash-card">
 		<div class="values">
 			{#each currentCard.setup as value}
 				<div class="value">{value}</div>
@@ -36,22 +36,28 @@
 		<div class="test">{currentCard.test}</div>
 
 		<div class="answer">
-			<button
-				class="glow-on-hover"
-				type="button"
-				on:click|stopPropagation={() => (currentCard.correct = currentCard.answer === true)}
-				>True</button
-			>
-			<button
-				class="glow-on-hover"
-				type="button"
-				on:click|stopPropagation={() => (currentCard.correct = currentCard.answer === false)}
-				>False</button
-			>
+			{#if currentCard.correct === undefined}
+				<button
+					class="glow-on-hover"
+					type="button"
+					on:click|stopPropagation={() => (currentCard.correct = currentCard.answer === true)}
+					>True</button
+				>
+				<button
+					class="glow-on-hover"
+					type="button"
+					disabled={currentCard.correct != undefined}
+					on:click|stopPropagation={() => (currentCard.correct = currentCard.answer === false)}
+					>False</button
+				>
+			{/if}
 			{#if currentCard.correct === true}
 				<div class="correct">Got it!!</div>
 			{:else if currentCard.correct === false}
 				<div class="suck">OOPS!!!!</div>
+			{/if}
+			{#if currentCard.correct !== undefined}
+				<button class="next" on:click={() => currentCardIndex++}>Next</button>
 			{/if}
 		</div>
 	</div>
@@ -115,7 +121,7 @@
 		border: none;
 		outline: none;
 		color: #fff;
-		background: #111;
+		background: #8000ff;
 		cursor: pointer;
 		position: relative;
 		z-index: 0;
@@ -187,6 +193,13 @@
 	.correct {
 	}
 	.suck {
+	}
+	.next {
+		background-color: darkblue;
+		color: white;
+		border-width: 5px;
+		border-color: black;
+		border-radius: 10px;
 	}
 	/* CSS Area */
 </style>
